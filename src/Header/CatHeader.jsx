@@ -22,7 +22,13 @@ const CatHeader = () => {
         <div className={`flex  mx-auto ${language === "ar" ? "gap-11 flex-row-reverse" : "gap-6 flex-row"}`}>
           {catageory.map((item, index) => {
             return (
-              <div className="hover:border-gray-600 hover:cursor-pointer border-b-4 border-white pb-2" key={index}>
+              <div
+                className="hover:border-gray-600 hover:cursor-pointer border-b-4 border-white pb-2
+              transition duration-100 ease-in transform 
+              
+              "
+                key={index}
+              >
                 {language === "ar" ? item.ar : item.en}
               </div>
             );
