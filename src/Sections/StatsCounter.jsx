@@ -26,7 +26,7 @@ const StatsCounter = () => {
           }
         });
       },
-      { threshold: 0.5 } // Adjust threshold for better control of when the element is visible
+      { threshold: 0.5 }
     );
 
     countersRef.current.forEach((el) => {

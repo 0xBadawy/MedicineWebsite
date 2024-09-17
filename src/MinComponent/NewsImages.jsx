@@ -1,7 +1,12 @@
 import React from "react";
+import img1 from "../assets/Images/News/NewsImage (2).jpg";
+import img2 from "../assets/Images/News/NewsImage (3).jpg";
+import img3 from "../assets/Images/News/NewsImage (4).jpg";
+import { useParams } from "react-router-dom";
 
 const NewsImages = () => {
-  const images = ["src/assets/Images/News/NewsImage (2).jpg", "src/assets/Images/News/NewsImage (3).jpg", "src/assets/Images/News/NewsImage (4).jpg"];
+  const images = [img1, img2, img3];
+  const { id } = useParams();
   const spans = [];
   const SpanSize = (sz) => {
     if (sz === 1) return spans.push("col-span-4");
@@ -21,13 +26,19 @@ const NewsImages = () => {
   return (
     <>
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {images.map((image, index) => {
             console.log(spans[index]);
 
             return (
               <div key={index} className={`relative rounded-xl ${spans[index]}`}>
-                <img src={image} alt="" className="w-full h-[300px] object-cover rounded-xl shadow-md shadow-gray-700" />
+                <img
+                  src={image}
+                  alt=""
+                  className="w-full h-[300px] object-cover rounded-xl shadow-md sh adow-gray-500
+                transition duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:-z-50 
+                "
+                />
               </div>
             );
           })}
