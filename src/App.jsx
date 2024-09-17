@@ -9,9 +9,9 @@ function App() {
   return (
     <>
       <Header />
-      <Landing />
-      {/* <NewsDetails /> */}
-      {/* <div className="h-screen"></div> */}
+      {/* <Landing /> */}
+      <NewsDetails />
+      <div className="h-screen"></div>
       <Footer />
     </>
   );
