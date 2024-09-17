@@ -28,12 +28,13 @@ const MessageSection = () => {
               </button>
             </div>
           </div>
-          <div className="bg-black h-[400px] ScrollEffectRight">
+          <div className="bg-black h-[400px] ScrollEffectRight ">
             <img
               className="w-full h-full object-cover  transition duration-500 ease-in-out transform hover:scale-105 hover:brightness-"
               src="src/assets/Images/Message.jpg"
               alt=""
             />
+
           </div>
         </div>
       </div>

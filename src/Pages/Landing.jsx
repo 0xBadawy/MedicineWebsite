@@ -1,5 +1,6 @@
 import AboutUsSection from "../Sections/AboutUsSection";
 import ArticleSection from "../Sections/ArticleSection";
+import DeanSection from "../Sections/DeanSection";
 import DepartmentSection from "../Sections/DepartmentSection";
 import HeroSection from "../Sections/HeroSection";
 import MessageSection from "../Sections/MessageSection";
@@ -13,6 +14,7 @@ const Landing = () => {
       <HeroSection />
       <AboutUsSection />
       <NewsSection />
+      <DeanSection />
       <MessageSection />
       <VisionSection />
       <DepartmentSection />

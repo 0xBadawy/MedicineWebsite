@@ -9,7 +9,7 @@ const StatsCounter = () => {
     { number: 324, current: 0, name: " طلاب الكلية", icon: <FaPeopleGroup className="text-[#272222] text-7xl mx-auto" /> },
     { number: 43, current: 0, name: "أعضاء هيئة التدريس", icon: <FaChalkboardTeacher className="text-[#0b0202] text-7xl mx-auto " /> },
     { number: 28, current: 0, name: "العاملين بالكادر العام", icon: <BsPersonFillGear className="text-[#272222] text-7xl mx-auto" /> },
-    { number: 8, current: 0, name: "الاقسام العلمية", icon: <GiBookshelf className="text-[#272222] text-7xl mx-auto" /> },
+    { number: 8, current: 0, name: "أقسام الكلية", icon: <GiBookshelf className="text-[#272222] text-7xl mx-auto" /> },
   ]);
 
   const countersRef = useRef([]);

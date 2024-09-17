@@ -3,15 +3,24 @@ import news from "../Data/News.json";
 import { FcOvertime } from "react-icons/fc";
 
 const NewsCard = ({ ID }) => {
+  const newBadge =
+    news.news[ID].id == 4 || news.news[ID].id == 3 ? (
+      <div className="absolute top-0 bg-primary text-white px-3 py-1 m-2 rounded-lg rounded-tl-lg">
+        <span className="text-sm font-semibold">جديد</span>
+      </div>
+    ) : null;
+
   return (
     <>
       <div>
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden text-right" style={{ direction: "rtl" }}>
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden text-right relative" style={{ direction: "rtl" }}>
           <img
             src={news.news[ID].image}
             alt="news"
             className="w-full h-56 object-cover object-center transition duration-500 ease-in-out transform hover:scale-110 hover:brightness-50 "
           />
+
+          {newBadge}
           <div className="px-6 py-4">
             <h1 className="font-bold text-l text-gray-800 truncate" style={{ direction: "rtl" }}>
               {news.news[ID].title}
