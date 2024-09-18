@@ -10,7 +10,7 @@ const DeanSection = () => {
   return (
     <>
       <div className="my-20">
-        <h1 className="mx-auto text-center font-bold text-3xl">{"إدارة الكلية"}</h1>
+        <h1 className="mx-auto text-center font-bold text-3xl my-10">{"إدارة الكلية"}</h1>
 
         <div className="container mx-auto w-[50%] flex gap-4 justify -between ">
           {dean.map((item, index) => {
