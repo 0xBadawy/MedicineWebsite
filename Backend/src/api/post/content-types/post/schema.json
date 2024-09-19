@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "newscards",
+  "collectionName": "posts",
   "info": {
-    "singularName": "newscard",
-    "pluralName": "newscards",
-    "displayName": "News",
-    "description": ""
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Posts"
   },
   "options": {
     "draftAndPublish": true
@@ -15,33 +14,31 @@
     "Title": {
       "type": "string"
     },
+    "Description": {
+      "type": "richtext"
+    },
     "DateTime": {
       "type": "datetime"
     },
-    "Description": {
-      "type": "text"
-    },
     "Cover": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
     "Gallery": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

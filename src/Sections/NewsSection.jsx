@@ -1,9 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import NewsCard from "./../MinComponent/NewsCard";
+import api from "../Config/API/api";
 
 const NewsSection = () => {
   const [news, setNews] = useState(["", "", "", "", "", "", "", ""]);
+
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    api
+      .get("/posts")
+      .then((response) => {
+        setNews(response.data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <>
       <div className="container mx-auto">
@@ -12,7 +31,7 @@ const NewsSection = () => {
           {news.map((item, index) => {
             return (
               <div key={index} className="ScrollEffectApper">
-                <NewsCard ID={index} />
+                <NewsCard ID={index} NewsDetails={item} />
               </div>
             );
           })}

@@ -4,6 +4,8 @@ import ArticleCard from "../MinComponent/ArticleCard";
 
 const ArticleSection = () => {
   const [news, setNews] = useState(["", "", "", ""]);
+
+  
   return (
     <>
       <div className="bg-[#f7f7f7] my-10 py-10">
