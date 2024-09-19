@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
-
+import FooterLogo from "../../assets/Images/Logo/LogoBlack.png";
 const Footer = () => {
   const [socialMedia, setSocialMedia] = useState([
     { text: { en: "Facebook", ar: "فيسبوك" }, link: "https://www.facebook.com" },
@@ -29,7 +29,7 @@ const Footer = () => {
           <div className="grid grid-cols-4">
             <div className="w-full mt-3 items-center">
               <img
-                src="src/assets/Images/Logo/LogoBlack.png"
+                src={FooterLogo}
                 className="w-[120px] mx-auto
               transition duration-100 ease-in transform hover:scale-105"
                 alt=""

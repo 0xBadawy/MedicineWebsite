@@ -1,3 +1,4 @@
+import HeaderLogo from "../assets/Images/Logo/LogoAR.png";
 const TopHeader = () => {
   return (
     <>
@@ -19,7 +20,7 @@ const TopHeader = () => {
           </div>
         </div>
         <div>
-          <img className="h-16 " src="src/assets/Images/Logo/LogoAR.png" alt="" />
+          <img className="h-16 " src={HeaderLogo} alt="Header Logo" />
         </div>
       </div>
       <hr />

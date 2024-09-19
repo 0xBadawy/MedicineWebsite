@@ -27,7 +27,7 @@ const NewsSection = () => {
     <>
       <div className="container mx-auto">
         <h1 className="text-center font-bold text-3xl">اخـر الاخــبــار</h1>
-        <div className="grid grid-cols-4 gap-2 mt-10 ">
+        <div className="grid grid-cols-4 gap-2 mt-10 " style={{direction:"rtl"}}>
           {news.map((item, index) => {
             return (
               <div key={index} className="ScrollEffectApper">

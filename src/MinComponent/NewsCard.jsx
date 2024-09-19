@@ -1,14 +1,15 @@
-import React from "react";
-import news from "../Data/News.json";
-import { FcOvertime } from "react-icons/fc";
+/* eslint-disable react/prop-types */
 
-const NewsCard = ({ ID, NewsDetails }) => {
+import { Link } from "react-router-dom";
+
+const NewsCard = ({ NewsDetails }) => {
   const newBadge =
-    news.news[ID].id == 4 || news.news[ID].id == 3 ? (
+    NewsDetails && NewsDetails.attributes && NewsDetails.attributes.DateTime && new Date(NewsDetails.attributes.DateTime) > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) ? (
       <div className="absolute top-0 bg-primary text-white px-3 py-1 m-2 rounded-lg rounded-tl-lg">
         <span className="text-sm font-semibold">جديد</span>
       </div>
     ) : null;
+
   console.log("NewsDetails");
   console.log(NewsDetails.attributes);
 
@@ -37,9 +38,10 @@ const NewsCard = ({ ID, NewsDetails }) => {
 
             <div className="mt-4">
               <div className="text-left">
-                <a href="#" className="text-indigo-600 inline-block  hover:text-indigo-800">
+               <Link to={`/news/${NewsDetails.id}`} className="text-indigo-600 inline-block  hover:text-indigo-800">
                   اقرأ المزيد
-                </a>
+                </Link> 
+
               </div>
               <hr className="my-2" />
 
