@@ -5,7 +5,7 @@ import api from "../Config/API/api";
 import { Link } from "react-router-dom";
 
 const NewsSection = () => {
-  const [news, setNews] = useState(["", "", "", "", "", "", "", ""]);
+  const [news, setNews] = useState(["", "", "", "", "", "", "", "", "", ""]);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
