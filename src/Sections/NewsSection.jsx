@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import NewsCard from "./../MinComponent/NewsCard";
 import api from "../Config/API/api";
+import { Link } from "react-router-dom";
 
 const NewsSection = () => {
   const [news, setNews] = useState(["", "", "", "", "", "", "", ""]);
-
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,7 +14,12 @@ const NewsSection = () => {
     api
       .get("/posts")
       .then((response) => {
-        setNews(response.data.data);
+        const LoadedData = response.data.data;
+        setNews(
+          LoadedData.filter((item, index) => {
+            return index < 8;
+          })
+        );
         setLoading(false);
       })
       .catch((error) => {
@@ -27,7 +32,7 @@ const NewsSection = () => {
     <>
       <div className="container mx-auto">
         <h1 className="text-center font-bold text-3xl">اخـر الاخــبــار</h1>
-        <div className="grid grid-cols-4 gap-2 mt-10 " style={{direction:"rtl"}}>
+        <div className="grid grid-cols-4 gap-2 mt-10 " style={{ direction: "rtl" }}>
           {news.map((item, index) => {
             return (
               <div key={index} className="ScrollEffectApper">
@@ -38,12 +43,12 @@ const NewsSection = () => {
         </div>
 
         <div className="flex justify-center mt-10">
-          <button className="border-2 border-[#611112] rounded-md px-5 py-2 font-bold  text-[#611112] flex gap-2 hover:bg-[#611112] hover:text-white">
+          <Link to={"/news"} className="border-2 border-[#611112] rounded-md px-5 py-2 font-bold  text-[#611112] flex gap-2 hover:bg-[#611112] hover:text-white">
             <div className="text-xl ">
               <IoIosArrowBack />
             </div>
             {"المزيد"}
-          </button>
+          </Link>
         </div>
       </div>
     </>

@@ -17,7 +17,7 @@ const NewsCard = ({ NewsDetails }) => {
   const Cover = NewsDetails?.attributes?.Cover?.data?.attributes?.formats?.medium?.url || "fallback-image-url.jpg";
   const BaseURL = "http://localhost:1337";
   if (!NewsDetails) {
-    return <LoadingCardComponent/>;
+    return <LoadingCardComponent />;
   }
 
   return (
@@ -52,10 +52,11 @@ const NewsCard = ({ NewsDetails }) => {
                 <div className="ml-3 flex flex-row-reverse text-2xl items-center gap-3">
                   {/* date */}
                   <p className="text-gray-800 text-[18px] font-mono">
-                    {new Date(NewsDetails.attributes.DateTime).toLocaleString("en-eg", {
+                    {new Date(NewsDetails.attributes.DateTime).toLocaleString("en-EG", {
                       year: "numeric",
                       month: "numeric",
                       day: "numeric",
+                      
                     })}
                   </p>{" "}
                 </div>

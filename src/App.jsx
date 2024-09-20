@@ -7,6 +7,7 @@ import NewsDetails from "./Pages/NewsDetails";
 import "./Style/Anmation.css";
 import "./Style/scroll.css";
 import AboutUs from "./Pages/AboutUs";
+import News from "./Pages/News";
 
 // Define routes
 const Router = createBrowserRouter([
@@ -25,6 +26,7 @@ const Router = createBrowserRouter([
     element: (
       <>
         <Header />
+        <News />
         <Footer />
       </>
     ),
