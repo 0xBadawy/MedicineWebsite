@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HeaderLogo from "../assets/Images/Logo/LogoAR.png";
 const TopHeader = () => {
   return (
@@ -20,7 +21,9 @@ const TopHeader = () => {
           </div>
         </div>
         <div>
-          <img className="h-16 " src={HeaderLogo} alt="Header Logo" />
+          <Link to="/">
+            <img className="h-16 hover:cursor-pointer " src={HeaderLogo} alt="Header Logo" />
+          </Link>
         </div>
       </div>
       <hr />

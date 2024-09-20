@@ -6,6 +6,7 @@ import Landing from "./Pages/Landing";
 import NewsDetails from "./Pages/NewsDetails";
 import "./Style/Anmation.css";
 import "./Style/scroll.css";
+import AboutUs from "./Pages/AboutUs";
 
 // Define routes
 const Router = createBrowserRouter([
@@ -24,6 +25,16 @@ const Router = createBrowserRouter([
     element: (
       <>
         <Header />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/about",
+    element: (
+      <>
+        <Header />
+        <AboutUs />
         <Footer />
       </>
     ),

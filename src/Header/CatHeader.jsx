@@ -1,19 +1,20 @@
 import { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const CatHeader = () => {
   const [language, setLanguage] = useState("ar"); // To toggle between Arabic and English
   const [catageory, setCatageory] = useState([
-    { ar: "الرئيسية", en: "Home" },
-    { ar: "عن الكلية", en: "About the College" },
-    { ar: "لائحة الكلية", en: "College Regulations" },
-    { ar: "دليل الطالب", en: "Student Guide" },
-    { ar: "احدث الاخبار", en: "Latest News" },
-    { ar: "الفاعليات", en: "Events" },
-    { ar: "القطاعات", en: "Sectors" },
-    { ar: "الأقسام العلمية", en: "Scientific Departments" },
-    { ar: "المراكز والوحدات", en: "Centers and Units" },
-    { ar: "أعضاء هيئة التدريس", en: "Faculty Members" },
+    { ar: "الرئيسية", en: "Home", route: "/" },
+    { ar: "عن الكلية", en: "About the College", route: "/about" },
+    { ar: "لائحة الكلية", en: "College Regulations", route: "/regulations" },
+    { ar: "دليل الطالب", en: "Student Guide", route: "/student-guide" },
+    { ar: "احدث الاخبار", en: "Latest News", route: "/news" },
+    { ar: "الفاعليات", en: "Events", route: "/events" },
+    { ar: "القطاعات", en: "Sectors", route: "/sectors" },
+    { ar: "الأقسام العلمية", en: "Scientific Departments", route: "/departments" },
+    { ar: "المراكز والوحدات", en: "Centers and Units", route: "/centers-units" },
+    { ar: "أعضاء هيئة التدريس", en: "Faculty Members", route: "/faculty-members" },
   ]);
 
   return (
@@ -24,12 +25,10 @@ const CatHeader = () => {
             return (
               <div
                 className="hover:border-gray-600 hover:cursor-pointer border-b-4 border-white pb-2
-              transition duration-100 ease-in transform 
-              
-              "
+              transition duration-100 ease-in transform "
                 key={index}
               >
-                {language === "ar" ? item.ar : item.en}
+                <Link to={item.route}> {language === "ar" ? item.ar : item.en}</Link>
               </div>
             );
           })}

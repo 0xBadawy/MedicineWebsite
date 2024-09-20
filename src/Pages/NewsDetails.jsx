@@ -7,6 +7,8 @@ import { useParams } from "react-router-dom";
 import HeaderCover from "../assets/Images/Cover/NewsCover.png";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm"; // Optional: for GitHub Flavored Markdown support
+import LoadingPage from "../MinComponent/LoadingPage";
+import NewsNotFound from "./NotFound/NewsNotFound";
 
 const NewsDetails = () => {
   const { id } = useParams();
@@ -35,10 +37,10 @@ const NewsDetails = () => {
     };
 
     fetchData();
-  }, [id]); // Add id as a dependency
+  }, [id]); 
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error loading data: {error.message}</div>;
+  if (loading)return <LoadingPage/>;
+  if (error) return <NewsNotFound/>;
 
   return (
     <>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import "../Style/Anmation.css";
+import { Link } from "react-router-dom";
 
 const AboutUsSection = () => {
   const [language, setLanguage] = useState("ar");
@@ -28,12 +29,12 @@ const AboutUsSection = () => {
               <p>{Text[1].ar}</p>
             </div>
             <div className="absolute bottom-0 left-0">
-              <button className="border-2 border-[#611112] rounded-md px-5 py-2 font-bold  text-[#611112] flex gap-2 hover:bg-[#611112] hover:text-white">
+              <Link to={"/about"} className="border-2 border-[#611112] rounded-md px-5 py-2 font-bold  text-[#611112] flex gap-2 hover:bg-[#611112] hover:text-white">
                 <div className="text-xl ">
                   <IoIosArrowBack />
                 </div>
                 {Text[2].ar}
-              </button>
+              </Link>
             </div>
           </div>
         </div>

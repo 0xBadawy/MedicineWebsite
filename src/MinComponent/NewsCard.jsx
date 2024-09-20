@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { Link } from "react-router-dom";
+import LoadingCardComponent from "./LoadingCardComponent";
 
 const NewsCard = ({ NewsDetails }) => {
   const newBadge =
@@ -16,18 +17,20 @@ const NewsCard = ({ NewsDetails }) => {
   const Cover = NewsDetails?.attributes?.Cover?.data?.attributes?.formats?.medium?.url || "fallback-image-url.jpg";
   const BaseURL = "http://localhost:1337";
   if (!NewsDetails) {
-    return <div>Loading news...</div>;
+    return <LoadingCardComponent/>;
   }
 
   return (
     <>
       <div className="mx-auto">
         <div className="bg-white shadow-lg rounded-lg overflow-hidden text-right relative " style={{ direction: "rtl" }}>
-          <img
-            src={BaseURL + Cover}
-            alt="news"
-            className="w-full h-56 object-cover object-center transition duration-500 ease-in-out transform hover:scale-110 hover:brightness-50 "
-          />
+          <Link to={`/news/${NewsDetails.id}`}>
+            <img
+              src={BaseURL + Cover}
+              alt="news"
+              className="w-full h-56 object-cover object-center transition duration-500 ease-in-out transform hover:scale-110 hover:brightness-50 "
+            />
+          </Link>
 
           {newBadge}
           <div className="px-6 py-4">
@@ -38,10 +41,9 @@ const NewsCard = ({ NewsDetails }) => {
 
             <div className="mt-4">
               <div className="text-left">
-               <Link to={`/news/${NewsDetails.id}`} className="text-indigo-600 inline-block  hover:text-indigo-800">
+                <Link to={`/news/${NewsDetails.id}`} className="text-indigo-600 inline-block  hover:text-indigo-800">
                   اقرأ المزيد
-                </Link> 
-
+                </Link>
               </div>
               <hr className="my-2" />
 
