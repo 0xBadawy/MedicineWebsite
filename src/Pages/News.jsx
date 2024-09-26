@@ -34,9 +34,9 @@ const News = () => {
                   <img className="w-28" src={FooterLogo} alt="" />
                 </span>
                 {/* Display the title from data if available */}
-                <span className="flex flex-col gap-3 items-center text-center">
+                <span className="flex flex-col gap-3 items-start text-center">
                   <span className="text-5xl text-center">آخـــر الأخــبــار</span>
-                  {/* <span className="text-sm font-normal max-w-[80ch] truncate ">ss</span> */}
+                  <span className="text-sm font-normal mt-5 max-w-[80ch] truncate ">كل ما تحتاج معرفته عن أحدث الأحداث والمستجدات في كلية الطب بجامعة الأقصر</span>
                 </span>
               </div>
             </div>

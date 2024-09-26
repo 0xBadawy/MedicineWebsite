@@ -37,10 +37,10 @@ const NewsDetails = () => {
     };
 
     fetchData();
-  }, [id]); 
+  }, [id]);
 
-  if (loading)return <LoadingPage/>;
-  if (error) return <NewsNotFound/>;
+  if (loading) return <LoadingPage />;
+  if (error) return <NewsNotFound />;
 
   return (
     <>
@@ -112,7 +112,7 @@ const NewsDetails = () => {
             <NewsImages Data={data.Gallery} />
           </div>
 
-          <div className="text-right text-gray-500 dark:text-gray-400" style={{ direction: "rtl" }}>
+          <div className="text-right leading-loose text-gray-500 dark:text-gray-400" style={{ direction: "rtl" }}>
             <ReactMarkdown>{data.Description}</ReactMarkdown>
           </div>
         </div>
